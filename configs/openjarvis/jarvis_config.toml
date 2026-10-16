@@ -1,0 +1,76 @@
+# Jarvis Personal AI Manager Configuration (built on OpenJarvis Apache-2.0)
+# Location: C:\Users\GARDISON\.gemini\antigravity\scratch\jarvis\openjarvis\config.toml
+
+[engine]
+default = "ollama"
+
+[engine.ollama]
+host = "http://localhost:11434"
+
+[intelligence]
+default_model = "qwen3.5:2b"
+model_chat = "qwen3.5:2b"
+model_short = "smollm2:135m"
+model_long = "qwen3.5:4b"
+model_code = "qwen3.5:4b"
+temperature = 0.65
+max_tokens = 1024
+repetition_penalty = 1.18
+
+[agent]
+default_agent = "orchestrator"
+max_turns = 8
+context_from_memory = true
+system_prompt_path = "C:/Users/GARDISON/.gemini/antigravity/scratch/jarvis/openjarvis/SOUL.md"
+tools = "schedule_manage,daily_briefing,accountability_checkin,web_search,get_weather,memory_retrieve,memory_store,memory_manage,user_profile_manage,calculator,think"
+
+[tools]
+enabled = "schedule_manage,daily_briefing,accountability_checkin,web_search,get_weather,memory_retrieve,memory_store,memory_manage,user_profile_manage,calculator,think"
+
+[tools.weather]
+provider = "openweathermap"
+default_location = "Nairobi,KE"
+units = "metric"
+lang = "en"
+
+[memory]
+default_backend = "sqlite"
+context_top_k = 5
+enabled = true
+backend = "local"
+
+[memory_files]
+soul_path = "C:/Users/GARDISON/.gemini/antigravity/scratch/jarvis/openjarvis/SOUL.md"
+user_path = "C:/Users/GARDISON/.gemini/antigravity/scratch/jarvis/openjarvis/USER.md"
+memory_path = "C:/Users/GARDISON/.gemini/antigravity/scratch/jarvis/openjarvis/MEMORY.md"
+
+[compression]
+enabled = true
+threshold = 0.50
+strategy = "session_consolidation"
+
+[digest]
+enabled = true
+schedule = "0 6 * * *"
+timezone = "Africa/Nairobi"
+persona = "jarvis_manager"
+honorific = "Gardison"
+tts_backend = "kokoro"
+
+[scheduler]
+enabled = true
+poll_interval = 60
+
+[security]
+enabled = true
+profile = "personal"
+mode = "redact"
+
+[server]
+host = "127.0.0.1"
+port = 8000
+agent = "orchestrator"
+
+[analytics]
+enabled = true
+choice_recorded = true
