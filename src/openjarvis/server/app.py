@@ -270,6 +270,8 @@ def create_app(
             "http://127.0.0.1:5173",
             "http://localhost:5174",
             "http://127.0.0.1:5174",
+            "http://localhost:8000",
+            "http://127.0.0.1:8000",
             # Tauri 2 production webview origins:
             #   macOS / Linux / iOS  -> tauri://localhost
             #   Windows / Android    -> http://tauri.localhost (default),
@@ -278,6 +280,8 @@ def create_app(
             "tauri://localhost",
             "http://tauri.localhost",
             "https://tauri.localhost",
+            # GitHub Pages origins
+            "https://gardis0n.github.io",
         ]
     # Defense in depth: a literal "*" with credentials is unsafe. Refuse it.
     _origins = [o for o in _origins if o != "*"]

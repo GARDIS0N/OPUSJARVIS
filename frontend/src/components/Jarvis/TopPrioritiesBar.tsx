@@ -16,6 +16,7 @@ import {
   fetchJarvisOverview,
   toggleJarvisPriority,
   saveJarvisPriorities,
+  isStaticDeployment,
   type JarvisOverview,
 } from '../../lib/jarvis-api';
 
@@ -120,6 +121,29 @@ export function TopPrioritiesBar({ onQuickPrompt }: TopPrioritiesBarProps) {
       aria-label="Today's Top 3 Priorities"
       className="w-full max-w-[var(--chat-max-width)] mx-auto px-4 pt-3 pb-2 shrink-0"
     >
+      {/* GitHub Pages status badge */}
+      {isStaticDeployment() && (
+        <div
+          role="status"
+          className="mb-2.5 flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg text-[11px] font-medium"
+          style={{
+            background: 'rgba(34, 197, 94, 0.08)',
+            border: '1px solid rgba(34, 197, 94, 0.25)',
+            color: '#86efac',
+          }}
+        >
+          <div className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>GitHub Pages Preview</span>
+          </div>
+          <button
+            onClick={() => navigate('/settings')}
+            className="text-[10px] underline underline-offset-2 opacity-80 hover:opacity-100 cursor-pointer"
+          >
+            Connect local backend (Settings &gt; Connection)
+          </button>
+        </div>
+      )}
       {/* Cloud privacy warning banner whenever request would leave device */}
       {leavesDevice && (
         <div
