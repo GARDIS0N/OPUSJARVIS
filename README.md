@@ -2,6 +2,7 @@
   <h1>OPUSJARVIS</h1>
   <p><b>Personal AI Manager for Gardison</b> — Built on top of the open-source <a href="https://github.com/open-jarvis/OpenJarvis">OpenJarvis</a> framework (Apache-2.0).</p>
   <p><i>Local-first • Anti-Repetition • Structured SQLite Schedule & Daily Briefing • Accountability Streak • Dark-Green Responsive UI</i></p>
+  <p>🚀 <b>Live Web App (GitHub Pages):</b> <a href="https://gardis0n.github.io/OPUSJARVIS/"><b>https://gardis0n.github.io/OPUSJARVIS/</b></a></p>
   <br>
   <img alt="OpenJarvis" src="assets/OpenJarvis_Horizontal_Logo.png" width="400">
 

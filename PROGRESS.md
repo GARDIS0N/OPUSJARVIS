@@ -49,3 +49,11 @@
   - `native_openhands` CodeAct permission toggle blocking by default
   - FastAPI `/api/jarvis/*` endpoints
 - Preserved Apache-2.0 license notices and documented Windows setup in `README.md`.
+
+## Phase 6: GitHub Pages Deployment (Completed & Live)
+- Configured Vite with relative base path (`./`) and `HashRouter` in `frontend/src/main.tsx` for seamless routing on subpaths without 404 errors.
+- Added offline/demo fallback mode in `frontend/src/lib/jarvis-api.ts` with local `localStorage` persistence and status indicators.
+- Added `https://gardis0n.github.io` to CORS allowed origins in `src/openjarvis/server/app.py`.
+- Created automated GitHub Actions deployment workflow `.github/workflows/deploy-pages.yml`.
+- Built production bundle with `404.html` and `.nojekyll` and pushed `gh-pages` branch directly to `https://github.com/GARDIS0N/OPUSJARVIS`.
+- Pushed updated `main` branch to remote `opusjarvis`.
