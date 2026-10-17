@@ -26,11 +26,11 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'OpenJarvis',
+        name: 'OPUSJARVIS',
         short_name: 'Jarvis',
-        description: 'On-device AI assistant',
-        theme_color: '#161618',
-        background_color: '#161618',
+        description: 'Personal AI Manager for Gardison — Local-first accountability & scheduling',
+        theme_color: '#07140d',
+        background_color: '#07140d',
         display: 'standalone',
         icons: [
           { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },

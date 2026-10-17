@@ -12,6 +12,7 @@ import {
 } from '../../lib/chat-telemetry';
 import { MicButton } from './MicButton';
 import { useSpeech } from '../../hooks/useSpeech';
+import { getManagerFallbackResponse } from '../../lib/manager-fallback';
 import type {
   ChatMessage,
   MessageTelemetry,
@@ -471,7 +472,7 @@ export function InputArea() {
       useAppStore.getState().setLiveEnergy(null);
     } finally {
       if (!accumulatedContent) {
-        accumulatedContent = 'No response was generated. Please try again.';
+        accumulatedContent = getManagerFallbackResponse(content);
       }
       const totalMs = Date.now() - startTime;
       const appState = useAppStore.getState();
